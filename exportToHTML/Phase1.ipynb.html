@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Phase1.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #616161; font-style: italic;}
+.s1 { color: #c792ea; font-style: italic;}
+.s2 { color: #eeffff;}
+.s3 { color: #89ddff;}
+.s4 { color: #c3e88d;}
+.s5 { color: #f78c6c;}
+.ls0 { height: 1px; border-width: 0; color: #424242; background-color:#424242}
+</style>
+</head>
+<body bgcolor="#212121">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Phase1.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">numpy </span><span class="s1">as </span><span class="s2">np</span>
+<span class="s1">import </span><span class="s2">matplotlib</span><span class="s3">.</span><span class="s2">pyplot </span><span class="s1">as </span><span class="s2">plt</span>
+<span class="s1">import </span><span class="s2">pandas </span><span class="s1">as </span><span class="s2">pd</span>
+<span class="s1">import </span><span class="s2">seaborn </span><span class="s1">as </span><span class="s2">sns</span>
+<span class="s1">from </span><span class="s2">sklearn</span><span class="s3">.</span><span class="s2">preprocessing </span><span class="s1">import </span><span class="s2">StandardScaler</span><hr class="ls0"><span class="s0">#%% 
+#Load the dataset for phase 1:</span>
+<span class="s0">#need the path first</span>
+<span class="s2">data_set </span><span class="s3">= </span><span class="s4">&quot;C:</span><span class="s3">\\</span><span class="s4">Users\corne\Downloads\loan_data.csv&quot;</span>
+<span class="s2">df </span><span class="s3">= </span><span class="s2">pd</span><span class="s3">.</span><span class="s2">read_csv</span><span class="s3">(</span><span class="s2">data_set</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s2">df</span><span class="s3">.</span><span class="s2">head</span><span class="s3">())</span><hr class="ls0"><span class="s0">#%% 
+#normalize the data by dropping columns that are not needed. Only the numerical columns are needed</span>
+
+<span class="s0">#drop the columns that are not needed</span>
+<span class="s2">drop_features </span><span class="s3">= </span><span class="s2">df</span><span class="s3">.</span><span class="s2">drop</span><span class="s3">(</span><span class="s2">columns</span><span class="s3">=[</span><span class="s4">'person_gender'</span><span class="s3">, </span><span class="s4">'person_home_ownership'</span><span class="s3">, </span><span class="s4">'loan_intent'</span><span class="s3">, </span><span class="s4">'previous_loan_defaults_on_file'</span><span class="s3">,</span><span class="s4">'person_education'</span><span class="s3">])</span>
+<span class="s2">scale </span><span class="s3">= </span><span class="s2">StandardScaler</span><span class="s3">()</span>
+<span class="s0">#scale the data</span>
+<span class="s2">scaled_data </span><span class="s3">= </span><span class="s2">scale</span><span class="s3">.</span><span class="s2">fit_transform</span><span class="s3">(</span><span class="s2">drop_features</span><span class="s3">)</span>
+<span class="s0">#convert the scaled data to a dataframe</span>
+<span class="s2">scaled_df </span><span class="s3">= </span><span class="s2">pd</span><span class="s3">.</span><span class="s2">DataFrame</span><span class="s3">(</span><span class="s2">scaled_data</span><span class="s3">, </span><span class="s2">columns</span><span class="s3">=</span><span class="s2">drop_features</span><span class="s3">.</span><span class="s2">columns</span><span class="s3">)</span>
+<span class="s0">#Be sure to plot this in a histogram</span>
+<span class="s2">data_histogram </span><span class="s3">= </span><span class="s2">scaled_df</span><span class="s3">.</span><span class="s2">hist</span><span class="s3">(</span><span class="s2">bins</span><span class="s3">=</span><span class="s5">50</span><span class="s3">, </span><span class="s2">figsize</span><span class="s3">=(</span><span class="s5">20</span><span class="s3">,</span><span class="s5">15</span><span class="s3">))</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s2">scaled_df</span><span class="s3">.</span><span class="s2">head</span><span class="s3">())</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s2">scaled_df</span><span class="s3">.</span><span class="s2">describe</span><span class="s3">())</span>
+</pre>
+</body>
+</html>
