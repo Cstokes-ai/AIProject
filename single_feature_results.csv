@@ -1,0 +1,23 @@
+Feature,Validation Accuracy,Precision,Recall,F1 Score
+person_age,77.87777781486511,0.0,0.0,0.0
+person_income,77.87777781486511,0.0,0.0,0.0
+person_emp_exp,77.87777781486511,0.0,0.0,0.0
+loan_amnt,77.87777781486511,0.0,0.0,0.0
+loan_int_rate,79.18888926506042,61.478599221789885,15.871421396283274,0.25229540918163673
+loan_percent_income,81.58888816833496,72.14854111405835,27.32295328980412,0.3963570127504554
+cb_person_cred_hist_length,77.87777781486511,0.0,0.0,0.0
+credit_score,77.87777781486511,0.0,0.0,0.0
+person_gender_male,77.87777781486511,0.0,0.0,0.0
+person_education_Bachelor,77.87777781486511,0.0,0.0,0.0
+person_education_Doctorate,77.87777781486511,0.0,0.0,0.0
+person_education_High School,77.87777781486511,0.0,0.0,0.0
+person_education_Master,77.87777781486511,0.0,0.0,0.0
+person_home_ownership_OTHER,77.87777781486511,0.0,0.0,0.0
+person_home_ownership_OWN,77.87777781486511,0.0,0.0,0.0
+person_home_ownership_RENT,77.87777781486511,0.0,0.0,0.0
+loan_intent_EDUCATION,77.87777781486511,0.0,0.0,0.0
+loan_intent_HOMEIMPROVEMENT,77.87777781486511,0.0,0.0,0.0
+loan_intent_MEDICAL,77.87777781486511,0.0,0.0,0.0
+loan_intent_PERSONAL,77.87777781486511,0.0,0.0,0.0
+loan_intent_VENTURE,77.87777781486511,0.0,0.0,0.0
+previous_loan_defaults_on_file_Yes,77.87777781486511,0.0,0.0,0.0
